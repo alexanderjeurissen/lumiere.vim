@@ -43,6 +43,7 @@ Then add the line `colorscheme lumiere` to your .vimrc file, and restart vim.
 There are a couple of options that can be configured:
 
 | option_name | default | effect |
+|-------------|---------|--------|
 | g:lumiere_bold | 1 | when set to 0, disables the usage of bold font |
 | g:lumiere_italic | 1 | when set to 0, disables the usage of italic font |
 | g:lumiere_inverse | 1 | when set to 0, disables the usage of inversing fg / bg of color groups |
