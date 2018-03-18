@@ -17,8 +17,6 @@ elements. Works great with [Sombre.tmux](https://github.com/alexanderjeurissen/t
 
 ![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/screenshots/low_contrast_mode.png)
 
-![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/screenshots/shellscript_and_config_files.png)
-
 ## Installation
 I Personally use [pack](https://github.com/maralla/pack) as my vim plugin manager of choice.
 Anyway, you can install Lumiere with whatever package manager you use. For example:
