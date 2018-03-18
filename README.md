@@ -6,7 +6,8 @@
 >
 >Though wise men at their end know dark is right,
 >Because their words had forked no lightning they
->Do not go gentle into that good night.>
+>Do not go gentle into that good night.
+>
 > ~ (Poem by Dylan Thomas)
 
 A light black and white vim colorscheme with sparse use of color to denote important syntax
