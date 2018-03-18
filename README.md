@@ -16,7 +16,6 @@ elements. Works great with [Sombre.tmux](https://github.com/alexanderjeurissen/t
 ![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/screenshots/python_and_ruby.png)
 
 ![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/screenshots/low_contrast_mode.png)
-NOTE: With Low contrast mode enabled (see customization section)
 
 ![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/screenshots/shellscript_and_config_files.png)
 
