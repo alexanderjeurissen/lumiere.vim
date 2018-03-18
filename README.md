@@ -14,6 +14,9 @@ elements. Works great with [Sombre.tmux](https://github.com/alexanderjeurissen/t
 
 ![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/screenshots/python_and_ruby.png)
 
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/screenshots/low_contrast_mode.png)
+NOTE: With Low contrast mode enabled (see customization section)
+
 ![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/screenshots/shellscript_and_config_files.png)
 
 ## Installation
@@ -37,3 +40,13 @@ Then add the line `colorscheme lumiere` to your .vimrc file, and restart vim.
 ## Color palette
 
 ![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/screenshots/colors.png)
+
+## Customization variables
+There are a couple of options that can be configured:
+
+| option_name | default | effect |
+| g:lumiere_bold | 1 | when set to 0, disables the usage of bold font |
+| g:lumiere_italic | 1 | when set to 0, disables the usage of italic font |
+| g:lumiere_inverse | 1 | when set to 0, disables the usage of inversing fg / bg of color groups |
+| g:lumiere_invert_selection | 1 | when set to 0, disables the usage of inverting the color in visual cursor and HlSearch|
+| g:lumiere_low_contrast_mode | 0 | When set to 1, reduces the background color brightness for easier use in low light conditions |
