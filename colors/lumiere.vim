@@ -192,6 +192,7 @@ augroup END
   let s:magentahl = '#d9b2fe'   " #d9b2fe
 
   let s:yellow = '#ffda40'      " #ffda40
+  let s:darkyellow = '#9f8000'  " #9f8000
   let s:yellowhl = '#fff7d8'    " #fff7d8
 
   let s:orange = '#cc4c00'      " #cc4c00
@@ -429,10 +430,10 @@ augroup END
 
 " Asynchronous Lint Engine: {{{
   " FIXME: See if we need this
-  call s:HL('ALEErrorSign', s:red, s:redhl)
-  call s:HL('ALEErrorLine', s:red, s:redhl)
-  call s:HL('ALEWarningSign', s:orange, s:orangehl)
-  call s:HL('ALEWarningLine', s:orange, s:orangehl)
+  call s:HL('ALEErrorSign', s:orange, s:orangehl)
+  call s:HL('ALEErrorLine', s:orange, s:orangehl)
+  call s:HL('ALEWarningSign', s:darkyellow, s:yellowhl)
+  call s:HL('ALEWarningLine', s:darkyellow, s:yellowhl)
   call s:HL('ALEInfoSign', s:blue, s:bluehl, s:bold)
   call s:HL('ALEInfoLine', s:blue, s:bluehl)
 " }}}
