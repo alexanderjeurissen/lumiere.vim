@@ -16,9 +16,6 @@ elements. Works great with [Sombre.tmux](https://github.com/alexanderjeurissen/t
 ![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/screenshots/python_and_ruby.png)
 
 ![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/screenshots/low_contrast_mode.png)
-NOTE: With Low contrast mode enabled (see customization section)
-
-![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/screenshots/shellscript_and_config_files.png)
 
 ## Installation
 I Personally use [pack](https://github.com/maralla/pack) as my vim plugin manager of choice.
@@ -46,6 +43,7 @@ Then add the line `colorscheme lumiere` to your .vimrc file, and restart vim.
 There are a couple of options that can be configured:
 
 | option_name | default | effect |
+|-------------|---------|--------|
 | g:lumiere_bold | 1 | when set to 0, disables the usage of bold font |
 | g:lumiere_italic | 1 | when set to 0, disables the usage of italic font |
 | g:lumiere_inverse | 1 | when set to 0, disables the usage of inversing fg / bg of color groups |
