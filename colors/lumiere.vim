@@ -192,7 +192,10 @@ augroup END
   let s:magentahl = '#d9b2fe'   " #d9b2fe
 
   let s:yellow = '#ffda40'      " #ffda40
-  let s:yellowhl = '#ffda40'    " #fff7d8
+  let s:yellowhl = '#fff7d8'    " #fff7d8
+
+  let s:orange = '#cc4c00'      " #cc4c00
+  let s:orangehl = '#ffc5a3'    " #ffc5a3
 " }}}
 
 " Normal UI {{{
@@ -205,7 +208,7 @@ augroup END
   hi! link CursorColumn CursorLine
 
   " Match paired bracket under the cursor
-  call s:HL('MatchParen', s:blue, s:none, s:bold)
+  call s:HL('MatchParen', s:blue, s:bluehl, s:bold)
 
   " Concealed element: \lambda → λ
   call s:HL('Conceal', s:gray1, s:bold)
@@ -419,19 +422,19 @@ augroup END
 " }}}
 
 " Signify: {{{
-  call s:HL('SignifySignAdd', s:green, s:none)
-  call s:HL('SignifySignChange', s:blue, s:none)
-  call s:HL('SignifySignDelete', s:red, s:none)
+  call s:HL('SignifySignAdd', s:gray10, s:none)
+  call s:HL('SignifySignChange', s:gray10, s:none)
+  call s:HL('SignifySignDelete', s:gray10, s:none)
 " }}}
 
 " Asynchronous Lint Engine: {{{
   " FIXME: See if we need this
-  " hi! link ALEErrorSign SnappyRedSign
-  " hi! link ALEWarningSign SnappyYellowSign
-  " hi! link ALEInfoSign SnappyBlueSign
-  call s:HL('ALEErrorSign', s:red, s:white, s:inverse)
-  call s:HL('ALEWarningSign', s:red, s:none, s:bold)
-  call s:HL('ALEInfoSign', s:blue, s:none, s:bold)
+  call s:HL('ALEErrorSign', s:red, s:redhl)
+  call s:HL('ALEErrorLine', s:red, s:redhl)
+  call s:HL('ALEWarningSign', s:orange, s:orangehl)
+  call s:HL('ALEWarningLine', s:orange, s:orangehl)
+  call s:HL('ALEInfoSign', s:blue, s:bluehl, s:bold)
+  call s:HL('ALEInfoLine', s:blue, s:bluehl)
 " }}}
 
 " Dirvish: {{{
