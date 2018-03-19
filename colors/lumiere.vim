@@ -1,10 +1,19 @@
 scriptencoding utf-8
+
+" NOTE: exit when we cant use ~256 colors
+if !(has('termguicolors') && &termguicolors) && !has('gui_running')
+      \ && (!exists('&t_Co') || &t_Co < 256)
+  echoerr '[lumiere] There are not enough colors.'
+  finish
+endif
+
+set background=light
+
 highlight clear
 if exists('syntax_on')
   syntax reset
 endif
 
-set background=light
 let g:colors_name = 'lumiere'
 
 augroup LumiereReload
@@ -54,7 +63,7 @@ augroup END
   endfunction
 " }}}
 
-" SETUP VARS: {{{
+" NOTE: SETUP VARIABLES {{{
   if !exists('g:lumiere_bold')
     let g:lumiere_bold=1
   endif
@@ -113,39 +122,39 @@ augroup END
   let s:none = 'NONE'
 " }}}
 
-" COLORS: {{{
-  let s:black = '#000000'       " #000000
-  let s:gray1 = '#080808'       " #080808
-  let s:gray2 = '#111111'       " #111111
-  let s:gray3 = '#1a1a1a'       " #1a1a1a
-  let s:gray4 = '#232323'       " #232323
-  let s:gray5 = '#2b2b2b'       " #2b2b2b
-  let s:gray6 = '#343434'       " #343434
-  let s:gray7 = '#3d3d3d'       " #3d3d3d
-  let s:gray8 = '#464646'       " #464646
-  let s:gray9 = '#4f4f4f'       " #4f4f4f
-  let s:gray10 = '#575757'      " #575757
-  let s:gray11 = '#606060'      " #606060
-  let s:gray12 = '#696969'      " #696969
-  let s:gray13 = '#727272'      " #727272
-  let s:gray14 = '#7b7b7b'      " #7b7b7b
-  let s:gray15 = '#838383'      " #838383
-  let s:gray16 = '#8c8c8c'      " #8c8c8c
-  let s:gray17 = '#959595'      " #959595
-  let s:gray18 = '#9e9e9e'      " #9e9e9e
-  let s:gray19 = '#a7a7a7'      " #a7a7a7
-  let s:gray20 = '#afafaf'      " #afafaf
-  let s:gray21 = '#b8b8b8'      " #b8b8b8
-  let s:gray22 = '#c1c1c1'      " #c1c1c1
-  let s:gray23 = '#cacaca'      " #cacaca
-  let s:gray24 = '#d3d3d3'      " #d3d3d3
-  let s:gray25 = '#dbdbdb'      " #dbdbdb
-  let s:gray26 = '#e4e4e4'      " #e4e4e4
-  let s:gray27 = '#ededed'      " #ededed
-  let s:gray28 = '#f6f6f6'      " #f6f6f6
-  let s:white = '#ffffff'       " #ffffff
-
-  " NOTE: offsuite grays for UI elements
+"COLORS: {{{
+  "GRAYS: {{{
+    let s:black = '#000000'       " #000000
+    let s:gray1 = '#080808'       " #080808
+    let s:gray2 = '#111111'       " #111111
+    let s:gray3 = '#1a1a1a'       " #1a1a1a
+    let s:gray4 = '#232323'       " #232323
+    let s:gray5 = '#2b2b2b'       " #2b2b2b
+    let s:gray6 = '#343434'       " #343434
+    let s:gray7 = '#3d3d3d'       " #3d3d3d
+    let s:gray8 = '#464646'       " #464646
+    let s:gray9 = '#4f4f4f'       " #4f4f4f
+    let s:gray10 = '#575757'      " #575757
+    let s:gray11 = '#606060'      " #606060
+    let s:gray12 = '#696969'      " #696969
+    let s:gray13 = '#727272'      " #727272
+    let s:gray14 = '#7b7b7b'      " #7b7b7b
+    let s:gray15 = '#838383'      " #838383
+    let s:gray16 = '#8c8c8c'      " #8c8c8c
+    let s:gray17 = '#959595'      " #959595
+    let s:gray18 = '#9e9e9e'      " #9e9e9e
+    let s:gray19 = '#a7a7a7'      " #a7a7a7
+    let s:gray20 = '#afafaf'      " #afafaf
+    let s:gray21 = '#b8b8b8'      " #b8b8b8
+    let s:gray22 = '#c1c1c1'      " #c1c1c1
+    let s:gray23 = '#cacaca'      " #cacaca
+    let s:gray24 = '#d3d3d3'      " #d3d3d3
+    let s:gray25 = '#dbdbdb'      " #dbdbdb
+    let s:gray26 = '#e4e4e4'      " #e4e4e4
+    let s:gray27 = '#ededed'      " #ededed
+    let s:gray28 = '#f6f6f6'      " #f6f6f6
+    let s:white = '#ffffff'       " #ffffff
+  " }}}
 
   " NOTE: The background we choose depends on
   " the light conditions. less harsh when low light
@@ -157,21 +166,33 @@ augroup END
     let s:uibg = '#ecf0f1'        " #ecf0f1
   end
 
-  let s:ui1 = '#dfddd7'         " #dfddd7
-  let s:ui2 = '#dedcd6'         " #dedcd6
-  let s:ui3 = '#d3d1cc'         " #d3d1cc
-  let s:ui4 = '#cac7bd'         " #cac7bd
-  let s:ui5 = '#b7b2a5'         " #b7b2a5
-  let s:ui6 = '#a39e8d'         " #a39e8d
-  let s:ui7 = '#908975'         " #908975
+  " NOTE: offsuite grays for UI elements {{{
+    let s:ui1 = '#dfddd7'         " #dfddd7
+    let s:ui2 = '#dedcd6'         " #dedcd6
+    let s:ui3 = '#d3d1cc'         " #d3d1cc
+    let s:ui4 = '#cac7bd'         " #cac7bd
+    let s:ui5 = '#b7b2a5'         " #b7b2a5
+    let s:ui6 = '#a39e8d'         " #a39e8d
+    let s:ui7 = '#908975'         " #908975
+  " }}}
 
   " NOTE: colors moddeled after the Win98 selected start menu item
   " by changing hues to match the desired color name.
   " These are used for highlighting important syntax
   let s:red = '#800013'         " #800013
+  let s:redhl = '#feb2bd'       " #feb2bd
+
   let s:green = '#00802c'       " #00802c
-  let s:blue = '#170080'        " #170080
-  let s:purple = '#410080'      " #410080
+  let s:greenhl = '#b2fecc'     " #b2fecc
+
+  let s:blue = '#001280'        " #001280
+  let s:bluehl = '#b2bdfe'      " #b2bdfe
+
+  let s:magenta = '#410080'     " #410080
+  let s:magentahl = '#d9b2fe'   " #d9b2fe
+
+  let s:yellow = '#ffda40'      " #ffda40
+  let s:yellowhl = '#ffda40'    " #fff7d8
 " }}}
 
 " Normal UI {{{
@@ -201,9 +222,9 @@ augroup END
   call s:HL('Visual', s:none, s:none, s:invert_selection)
   hi! link VisualNOS Visual
 
-  call s:HL('Search', s:none, s:none, s:invert_selection)
-  call s:HL('IncSearch', s:none, s:none, s:invert_selection)
-  call s:HL('CurrentSearchMatch', s:white, s:none, s:inverse . s:bold)
+  call s:HL('Search', s:black, s:yellow)
+  call s:HL('IncSearch', s:black, s:yellow, s:invert_selection)
+  call s:HL('CurrentSearchMatch', s:black, s:none, s:inverse . s:bold)
 
   call s:HL('Underlined', s:black, s:none, s:underline)
 
@@ -218,12 +239,12 @@ augroup END
   " Current match in wildmenu completion
   call s:HL('WildMenu', s:blue, s:white, s:bold . s:inverse)
 
-  " FIXME
-  " " Directory names, special names in listing
+  " Directory names, special names in listing
   call s:HL('Directory', s:black, s:none, s:bold)
 
-  " " Titles for output from :set all, :autocmd, etc.
-  " hi! link Title GruvboxGreenBold
+  " Titles for output from :set all, :autocmd, etc.
+  " Also used for Markdown headings
+  call s:HL('Title', s:black, s:none, s:bold)
 
   " " Error messages on the command line
   call s:HL('ErrorMsg', s:red, s:none, s:bold)
@@ -266,9 +287,13 @@ augroup END
 
 " Syntax Highlighting: {{{
   call s:HL('Special', s:black, s:none, s:italic)
-  call s:HL('Comment', s:gray14, s:none, s:italic)
-  " TODO and similar tags.
-  call s:HL('Todo', s:purple, s:none, s:bold . s:italic)
+  call s:HL('Comment', s:gray13, s:gray26, s:italic)
+  " TODO: a todo tag
+  call s:HL('Todo', s:blue, s:gray26, s:bold . s:italic)
+  " NOTE: a note tag
+  " ERROR: a error tag
+  call s:HL('vimCommentTitle', s:black, s:gray26, s:bold . s:italic)
+
   call s:HL('Error', s:red, s:none, s:bold . s:inverse)
 
   " Generic statement
@@ -321,16 +346,16 @@ augroup END
   call s:HL('Character', s:red, s:none, s:italic)
 
   " String constant: "this is a string"
-  call s:HL('String', s:green, s:none, s:italic)
+  call s:HL('String', s:gray8, s:none, s:italic)
 
   " Boolean constant: TRUE, FALSE
-  call s:HL('Boolean', s:purple, s:none, s:bold)
+  call s:HL('Boolean', s:magenta, s:none, s:bold)
 
   " Number constant: 234, 0xff
-  call s:HL('Number', s:purple, s:none, s:italic)
+  call s:HL('Number', s:magenta, s:none, s:italic)
 
   " Floating point constant: 2.3e10
-  call s:HL('Float', s:purple, s:none, s:italic)
+  call s:HL('Float', s:magenta, s:none, s:italic)
 
   " Generic type
   call s:HL('Type', s:black, s:none, s:bold)
@@ -357,35 +382,33 @@ augroup END
 " }}}
 
 " Diffs: {{{
-  call s:HL('DiffDelete', s:red, s:none, s:inverse)
-  call s:HL('DiffAdd',    s:green, s:none, s:inverse)
-
-  " Alternative setting
-  call s:HL('DiffChange', s:blue, s:none, s:inverse)
-  call s:HL('DiffText',   s:purple, s:none, s:inverse)
+  call s:HL('DiffDelete', s:red, s:redhl)
+  call s:HL('DiffAdd',    s:green, s:greenhl)
+  call s:HL('DiffChange', s:blue, s:bluehl)
+  call s:HL('DiffText',   s:blue, s:bluehl, s:underline)
 " }}}
 
 " Spelling: {{{
-  if has("spell")
+  if has('spell')
     call s:HL('SpellCap', s:none, s:none, s:undercurl, s:red)
     " Not recognized word
     call s:HL('SpellBad', s:none, s:none, s:undercurl, s:blue)
     " Wrong spelling for selected region
     call s:HL('SpellLocal', s:none, s:none, s:undercurl, s:green)
     " Rare word
-    call s:HL('SpellRare', s:none, s:none, s:undercurl, s:purple)
+    call s:HL('SpellRare', s:none, s:none, s:undercurl, s:magenta)
   end
 " }}}
 
 " Diff: {{{
-  call s:HL('diffAdded', s:green, s:none)
-  call s:HL('diffRemoved', s:red, s:none)
-  call s:HL('diffChanged', s:blue, s:none)
+  call s:HL('diffAdded', s:green, s:greenhl)
+  call s:HL('diffRemoved', s:red, s:redhl)
+  call s:HL('diffChanged', s:blue, s:bluehl)
 
   call s:HL('diffFile', s:black, s:none)
   call s:HL('diffNewFile', s:black, s:none, s:bold)
 
-  call s:HL('diffLine', s:purple, s:none)
+  call s:HL('diffLine', s:magenta, s:magentahl)
 " }}}
 
 " Sneak: {{{
@@ -418,7 +441,7 @@ augroup END
 
 " Ruby specific Highlighting: {{{
   call s:HL('rubyDefine', s:black, s:none, s:bold)
-  call s:HL('rubyStringDelimiter', s:green, s:none)
+  call s:HL('rubyStringDelimiter', s:gray8, s:none)
 " }}}
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
