@@ -1,4 +1,4 @@
-# ⚪️ lumiere.vim
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/lumiere_logo.png)
 
 >Do not go gentle into that good night,
 >Old age should burn and rave at close of day;
@@ -11,11 +11,11 @@
 > ~ (Poem by Dylan Thomas)
 
 A light black and white vim colorscheme with sparse use of color to denote important syntax
-elements. Works great with [Sombre.tmux](https://github.com/alexanderjeurissen/tmux-colors-sombre)
+elements. Works great with [Sombre.tmux](https://github.com/alexanderjeurissen/sombre.tmux)
 
-![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/screenshots/python_and_ruby.png)
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/python_and_ruby.png)
 
-![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/screenshots/low_contrast_mode.png)
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/low_contrast_mode.png)
 
 ## Installation
 I Personally use [pack](https://github.com/maralla/pack) as my vim plugin manager of choice.
@@ -37,7 +37,7 @@ Then add the line `colorscheme lumiere` to your .vimrc file, and restart vim.
 
 ## Color palette
 
-![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/screenshots/colors.png)
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/colors.png)
 
 ## Customization variables
 There are a couple of options that can be configured:
