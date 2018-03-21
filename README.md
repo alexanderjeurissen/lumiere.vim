@@ -15,7 +15,16 @@ Looks even more awesome when combined with [Sombre.tmux](https://github.com/alex
 
 ![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/python_and_ruby.png)
 
+## Screenshots
+
+### Low contrast mode
 ![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/low_contrast_mode.png)
+
+### Git Diff
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/gitdiff.png)
+
+### Vim diff (using neovim as git difftool)
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/vimdiff.png)
 
 ## Installation
 I Personally use [pack](https://github.com/maralla/pack) as my vim plugin manager of choice.
