@@ -16,7 +16,6 @@ Looks even more awesome when combined with [Sombre.tmux](https://github.com/alex
 ![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/python_and_ruby.png)
 
 ## Screenshots
-
 ### Low contrast mode
 ![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/low_contrast_mode.png)
 
@@ -46,7 +45,6 @@ Then add the line `colorscheme lumiere` to your .vimrc file, and restart vim.
 
 ## Color palette
 
-![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/colors.png)
 
 ## Customization variables
 There are a couple of options that can be configured:
