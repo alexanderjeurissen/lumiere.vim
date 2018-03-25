@@ -180,6 +180,7 @@ augroup END
   " by changing hues to match the desired color name.
   " These are used for highlighting important syntax
   let s:red = '#800013'         " #800013
+  let s:lightred = '#cc001e'    " #cc001e
   let s:redhl = '#feb2bd'       " #feb2bd
 
   let s:green = '#00802c'       " #00802c
@@ -187,13 +188,14 @@ augroup END
 
   let s:blue = '#001280'        " #001280
   let s:bluehl = '#b2bdfe'      " #b2bdfe
+  let s:lightblue = '#405aff'   " #405aff
+  let s:lightbluehl = '#d8defe' " #d8defe
 
   let s:magenta = '#410080'     " #410080
   let s:magentahl = '#d9b2fe'   " #d9b2fe
 
-  let s:yellow = '#ffda40'      " #ffda40
   let s:darkyellow = '#4f4000'  " #4f4000
-
+  let s:yellow = '#ffda40'      " #ffda40
   let s:yellowhl = '#fff7d8'    " #fff7d8
 
   let s:orange = '#cc4c00'      " #cc4c00
@@ -204,10 +206,12 @@ augroup END
   " Normal text
   call s:HL('Normal', s:black, s:uibg)
 
+  " Normal text in help files
+  call s:HL('HelpNormal', s:darkyellow, s:yellowhl)
+
   " Cursor line / column
   call s:HL('CursorLine', s:none , s:ui1, s:none)
-
-  hi! link CursorColumn CursorLine
+  call s:HL('CursorColumn', s:none , s:ui1, s:none)
 
   " Match paired bracket under the cursor
   call s:HL('MatchParen', s:blue, s:bluehl, s:bold)
@@ -295,12 +299,13 @@ augroup END
 
 " Syntax Highlighting: {{{
   call s:HL('Special', s:black, s:none, s:italic)
-  call s:HL('Comment', s:gray13, s:gray26, s:italic)
+  call s:HL('Comment', s:blue, s:lightbluehl, s:italic)
   " TODO: a todo tag
-  call s:HL('Todo', s:blue, s:gray26, s:bold . s:italic)
+  call s:HL('Todo', s:blue, s:lightbluehl, s:bold . s:italic)
   " NOTE: a note tag
   " ERROR: a error tag
-  call s:HL('vimCommentTitle', s:black, s:gray26, s:bold . s:italic)
+  " FIXME: a fixme tag
+  call s:HL('vimCommentTitle', s:blue, s:lightbluehl, s:bold . s:italic)
 
   call s:HL('Error', s:red, s:none, s:bold . s:inverse)
 
@@ -413,7 +418,7 @@ augroup END
   call s:HL('diffRemoved', s:red, s:redhl)
   call s:HL('diffChanged', s:blue, s:bluehl)
 
-  call s:HL('diffFile', s:black, s:none)
+  call s:HL('diffFile', s:gray28, s:none)
   call s:HL('diffNewFile', s:black, s:none, s:bold)
 
   call s:HL('diffLine', s:magenta, s:magentahl)
@@ -433,11 +438,13 @@ augroup END
 " }}}
 
 " Asynchronous Lint Engine: {{{
-  " FIXME: See if we need this
-  call s:HL('ALEErrorSign', s:orange, s:orangehl)
-  call s:HL('ALEErrorLine', s:orange, s:orangehl)
-  call s:HL('ALEWarningSign', s:darkyellow, s:yellowhl)
-  call s:HL('ALEWarningLine', s:darkyellow, s:yellowhl)
+  call s:HL('ALEErrorBg', s:red, s:redhl)
+  call s:HL('ALEErrorHl', s:none, s:lightred, s:none)
+  call s:HL('ALEErrorSign', s:red, s:redhl)
+  call s:HL('ALEErrorLine', s:white, s:red)
+
+  call s:HL('ALEWarningSign', s:orange, s:orangehl)
+  call s:HL('ALEWarningLine', s:orange, s:orangehl)
   call s:HL('ALEInfoSign', s:blue, s:bluehl, s:bold)
   call s:HL('ALEInfoLine', s:blue, s:bluehl)
 " }}}
