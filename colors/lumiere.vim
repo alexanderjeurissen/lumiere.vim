@@ -430,6 +430,9 @@ augroup END
   call s:HL('gitcommitHeader', s:gray28, s:black)
   call s:HL('gitcommitSelectedType', s:gray28, s:black)
   call s:HL('gitcommitSelectedFile', s:gray28, s:black)
+  call s:HL('gitcommitDiscardedType', s:gray28, s:black)
+  call s:HL('gitcommitDiscardedFile', s:gray28, s:black)
+  call s:HL('gitcommitUntrackedFile', s:gray28, s:black)
 " }}}
 " Sneak: {{{
   augroup lumiere
