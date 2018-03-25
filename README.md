@@ -13,10 +13,11 @@
 A light black and white vim colorscheme with sparse use of color to denote important syntax elements.
 Looks even more awesome when combined with [Sombre.tmux](https://github.com/alexanderjeurissen/sombre.tmux)
 
-![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/python_and_ruby.png)
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/ruby.png)
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/python.png)
 
 ## Screenshots
-### Low contrast mode
+### Low contrast mode(ruby)
 ![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/low_contrast_mode.png)
 
 ### Git Diff
