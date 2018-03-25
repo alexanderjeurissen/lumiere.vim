@@ -207,7 +207,7 @@ augroup END
   call s:HL('Normal', s:black, s:uibg)
 
   " Normal text in help files
-  call s:HL('HelpNormal', s:darkyellow, s:yellowhl)
+  call s:HL('HelpNormal', s:gray28, s:black)
 
   " Cursor line / column
   call s:HL('CursorLine', s:none , s:ui1, s:none)
@@ -229,7 +229,7 @@ augroup END
   call s:HL('SpecialKey', s:none, s:gray1)
 
   call s:HL('Visual', s:none, s:none, s:invert_selection)
-  hi! link VisualNOS Visual
+  call s:HL('VisualNOS', s:none, s:none, s:invert_selection)
 
   call s:HL('Search', s:black, s:yellow)
   call s:HL('IncSearch', s:black, s:yellow, s:invert_selection)
@@ -299,13 +299,14 @@ augroup END
 
 " Syntax Highlighting: {{{
   call s:HL('Special', s:black, s:none, s:italic)
-  call s:HL('Comment', s:darkyellow, s:yellowhl, s:italic)
+  call s:HL('Comment', s:gray28, s:black, s:italic)
   " TODO: a todo tag
-  call s:HL('Todo', s:darkyellow, s:yellowhl, s:bold . s:italic)
+  call s:HL('Todo', s:gray28, s:black, s:bold . s:italic)
   " NOTE: a note tag
   " ERROR: a error tag
   " FIXME: a fixme tag
-  call s:HL('vimCommentTitle', s:darkyellow, s:yellowhl, s:bold . s:italic)
+  call s:HL('vimCommentTitle', s:gray28, s:black, s:bold . s:italic)
+  call s:HL('vimCommentTitleLeader', s:gray28, s:black, s:bold . s:italic)
 
   call s:HL('Error', s:red, s:none, s:bold . s:inverse)
 
@@ -418,12 +419,18 @@ augroup END
   call s:HL('diffRemoved', s:red, s:redhl)
   call s:HL('diffChanged', s:blue, s:bluehl)
 
-  call s:HL('diffFile', s:gray28, s:none)
+  call s:HL('diffFile', s:black, s:none)
   call s:HL('diffNewFile', s:black, s:none, s:bold)
 
   call s:HL('diffLine', s:magenta, s:magentahl)
 " }}}
 
+" GITCOMMIT: {{{
+  call s:HL('gitcommitBranch', s:gray28, s:black, s:bold)
+  call s:HL('gitcommitHeader', s:gray28, s:black)
+  call s:HL('gitcommitSelectedType', s:gray28, s:black)
+  call s:HL('gitcommitSelectedFile', s:gray28, s:black)
+" }}}
 " Sneak: {{{
   augroup lumiere
     autocmd ColorScheme lumiere hi! link Sneak Search
