@@ -299,13 +299,13 @@ augroup END
 
 " Syntax Highlighting: {{{
   call s:HL('Special', s:black, s:none, s:italic)
-  call s:HL('Comment', s:blue, s:lightbluehl, s:italic)
+  call s:HL('Comment', s:darkyellow, s:yellowhl, s:italic)
   " TODO: a todo tag
-  call s:HL('Todo', s:blue, s:lightbluehl, s:bold . s:italic)
+  call s:HL('Todo', s:darkyellow, s:yellowhl, s:bold . s:italic)
   " NOTE: a note tag
   " ERROR: a error tag
   " FIXME: a fixme tag
-  call s:HL('vimCommentTitle', s:blue, s:lightbluehl, s:bold . s:italic)
+  call s:HL('vimCommentTitle', s:darkyellow, s:yellowhl, s:bold . s:italic)
 
   call s:HL('Error', s:red, s:none, s:bold . s:inverse)
 
