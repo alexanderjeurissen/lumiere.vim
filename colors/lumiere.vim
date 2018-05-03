@@ -434,6 +434,7 @@ augroup END
   call s:HL('gitcommitDiscardedFile', s:gray28, s:black)
   call s:HL('gitcommitUntrackedFile', s:gray28, s:black)
 " }}}
+"
 " Sneak: {{{
   augroup lumiere
     autocmd ColorScheme lumiere hi! link Sneak Search
@@ -467,6 +468,10 @@ augroup END
 " Ruby specific Highlighting: {{{
   call s:HL('rubyDefine', s:black, s:none, s:bold)
   call s:HL('rubyStringDelimiter', s:gray8, s:none)
+" }}}
+
+" XML/HtML specific Highlighting: {{{
+  call s:HL('xmlAttribPunct', s:black, s:uibg)
 " }}}
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
