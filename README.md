@@ -40,7 +40,7 @@ Add `Plugin 'alexanderjeurissen/lumiere.vim'` to your .vimrc and run `:PluginIns
 Add `NeoBundle 'alexanderjeurissen/lumiere.vim'` to your .vimrc and run `:NeoBundleInstall`
 
 - vim-plug
-Add `Plug 'morhetz/gruvbox'` to your .vimrc and run `:PlugInstall`
+Add `Plug 'alexanderjeurissen/lumiere.vim'` to your .vimrc and run `:PlugInstall`
 
 Then add the line `colorscheme lumiere` to your .vimrc file, and restart vim.
 
