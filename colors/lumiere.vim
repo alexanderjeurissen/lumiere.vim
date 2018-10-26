@@ -208,6 +208,7 @@ augroup END
 
   " Normal text in help files
   call s:HL('HelpNormal', s:gray28, s:black)
+  call s:HL('helpHyperTextEntry', s:gray28, s:black, s:bold)
 
   " Cursor line / column
   call s:HL('CursorLine', s:black, s:ui1)
