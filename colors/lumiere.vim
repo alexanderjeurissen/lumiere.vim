@@ -206,11 +206,6 @@ augroup END
   " Normal text
   call s:HL('Normal', s:black, s:uibg)
 
-  " Normal text in help files
-  call s:HL('HelpNormal', s:gray28, s:black)
-  call s:HL('helpHyperTextEntry', s:gray28, s:black, s:bold)
-  call s:HL('helpOption', s:gray28, s:black, s:italic)
-
   " Cursor line / column
   call s:HL('CursorLine', s:black, s:ui1)
   call s:HL('CursorColumn', s:black, s:ui1)
@@ -271,6 +266,54 @@ augroup END
   call s:HL('Question', s:green, s:none, s:bold)
   " " Warning messages
   call s:HL('WarningMsg', s:red, s:none, s:bold)
+" }}}
+
+
+
+" HelpFiles: {{{
+  call s:HL('HelpNormal', s:gray28, s:black)
+  call s:HL('helpConditional', s:gray28, s:black)
+  call s:HL('helpExample', s:gray28, s:black, s:italic)
+  call s:HL('helpHyperTextEntry', s:gray28, s:black, s:bold)
+  call s:HL('helpMacro', s:gray28, s:black, s:bold)
+  call s:HL('helpRepeat', s:gray28, s:black, s:bold)
+  call s:HL('helpRepeat', s:gray28, s:black, s:bold)
+  call s:HL('helpStorageClass', s:gray28, s:black, s:bold)
+  call s:HL('helpURL', s:gray28, s:black, s:italic)
+  call s:HL('helpConstant', s:gray28, s:black, s:bold)
+  call s:HL('helpException', s:lightred, s:black, s:bold)
+  call s:HL('helpHyperTextJump', s:gray28, s:black, s:italic)
+  call s:HL('helpSectionDelim', s:gray28, s:black, s:bold)
+  call s:HL('helpString', s:gray28, s:black, s:italic)
+  call s:HL('helpUnderlined', s:gray28, s:black, s:underline)
+  call s:HL('helpDebug', s:gray28, s:black, s:italic)
+  call s:HL('helpFloat', s:magentahl, s:black, s:italic)
+  call s:HL('helpIdentifier', s:gray28, s:black, s:italic)
+  call s:HL('helpNumber', s:magentahl, s:black, s:italic)
+  call s:HL('helpSpecial', s:gray28, s:black, s:italic)
+  call s:HL('helpStructure', s:gray28, s:black, s:bold)
+  call s:HL('helpVim', s:gray28, s:black, s:italic)
+  call s:HL('helpBoolean', s:magentahl, s:black, s:bold)
+  call s:HL('helpDefine', s:gray28, s:black, s:bold)
+  call s:HL('helpFunction', s:gray28, s:black, s:italic)
+  call s:HL('helpIgnore', s:gray28, s:black, s:italic)
+  call s:HL('helpOperator', s:gray28, s:black)
+  call s:HL('helpSpecialChar', s:gray28, s:black, s:italic)
+  call s:HL('helpTag', s:gray28, s:black, s:italic)
+  call s:HL('helpTag', s:gray28, s:black, s:italic)
+  call s:HL('helpCharacter', s:lightred, s:none, s:italic)
+  call s:HL('helpDelimiter', s:gray28, s:black, s:italic)
+  call s:HL('helpInclude', s:gray28, s:black, s:italic)
+  call s:HL('helpSpecialComment', s:gray28, s:black, s:italic)
+  call s:HL('helpHeader', s:gray28, s:black, s:bold)
+  call s:HL('helpKeyword', s:gray28, s:black, s:bold)
+  call s:HL('helpPreCondit', s:gray28, s:black, s:italic)
+  call s:HL('helpType', s:gray28, s:black, s:bold)
+  call s:HL('helpHeadline', s:gray28, s:black, s:bold)
+  call s:HL('helpLabel', s:gray28, s:black, s:bold)
+  call s:HL('helpPreProc', s:gray28, s:black, s:bold)
+  call s:HL('helpStatement', s:gray28, s:black, s:bold)
+  call s:HL('helpTypedef', s:gray28, s:black, s:italic)
 " }}}
 
 " Gutter: {{{
