@@ -314,6 +314,7 @@ augroup END
   call s:HL('helpPreProc', s:gray28, s:black, s:bold)
   call s:HL('helpStatement', s:gray28, s:black, s:bold)
   call s:HL('helpTypedef', s:gray28, s:black, s:italic)
+  call s:HL('helpOption', s:gray28, s:black, s:bold)
 " }}}
 
 " Gutter: {{{
