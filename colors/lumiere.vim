@@ -18,7 +18,7 @@ let g:colors_name = 'lumiere'
 
 augroup LumiereReload
 autocmd!
-    autocmd BufWritePost lumiere_dev.vim colo lumiere_dev
+    autocmd BufWritePost lumiere_dev.vim colorscheme lumiere_dev
     autocmd BufWritePost lumiere_dev.vim set ft=vim
 augroup END
 
@@ -60,6 +60,11 @@ augroup END
   " NOTE: execute the 'highlight' command with a List of arguments.
   function! s:Highlight(args)
     exec 'highlight ' . join(a:args, ' ')
+  endfunction
+
+  " NOTE: activate lumiere colorscheme can be added to a au group or autoloader
+  function! lumiere#ActivateColorScheme
+    colorscheme lumiere
   endfunction
 " }}}
 
