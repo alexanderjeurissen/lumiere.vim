@@ -18,8 +18,8 @@ let g:colors_name = 'lumiere'
 
 augroup LumiereReload
 autocmd!
-    autocmd BufWritePost lumiere_dev.vim colo lumiere_dev
-    autocmd BufWritePost lumiere_dev.vim set ft=vim
+    autocmd BufWritePost lumiere.vim colo lumiere
+    autocmd BufWritePost lumiere.vim set ft=vim
 augroup END
 
 " Functions: {{{
@@ -161,9 +161,11 @@ augroup END
   " more bright when we have plenty of light.
 
   if g:lumiere_low_contrast_mode == 1
-    let s:uibg = '#e7e5e2'        " #e7e5e2
+    let s:bg = '#F1F1F1'        " #F1F1F1
+    let s:fg = '#424242'        " #424242
   else
-    let s:uibg = '#ecf0f1'        " #ecf0f1
+    let s:bg = '#ecf0f1'        " #ECF0F1
+    let s:fg = '#000000'        " #000000
   end
 
   " NOTE: offsuite grays for UI elements {{{
@@ -204,11 +206,11 @@ augroup END
 
 " Normal UI {{{
   " Normal text
-  call s:HL('Normal', s:black, s:uibg)
+  call s:HL('Normal', s:fg, s:bg)
 
   " Cursor line / column
-  call s:HL('CursorLine', s:black, s:ui1)
-  call s:HL('CursorColumn', s:black, s:ui1)
+  call s:HL('CursorLine', s:fg, s:ui1)
+  call s:HL('CursorColumn', s:fg, s:ui1)
 
   " Match paired bracket under the cursor
   call s:HL('MatchParen', s:blue, s:bluehl, s:bold)
@@ -217,7 +219,7 @@ augroup END
   call s:HL('Conceal', s:gray1, s:bold)
 
   " Line number of CursorLine
-  call s:HL('CursorLineNr', s:gray5, s:ui3, s:bold)
+  call s:HL('CursorLineNr', s:gray5, s:none, s:bold)
 
   " Non text is stuff like Tildes on the bottom of the page.
   call s:HL('NonText', s:gray1, s:none)
@@ -232,29 +234,29 @@ augroup END
   call s:HL('IncSearch', s:black, s:yellow, s:invert_selection)
   call s:HL('CurrentSearchMatch', s:black, s:none, s:inverse . s:bold)
 
-  call s:HL('Underlined', s:black, s:none, s:underline)
+  call s:HL('Underlined', s:fg, s:none, s:underline)
 
-  call s:HL('StatusLine', s:ui3, s:gray5, s:inverse)
+  call s:HL('StatusLine', s:fg, s:ui1, s:bold)
   " NOTE: equal StatusLine and StatusLineNC cause statusline spacing to bug out
   " SOURCE: https://tinyurl.com/yavjy26z
-  call s:HL('StatusLineNC', s:ui1, s:gray15, s:inverse)
+  call s:HL('StatusLineNC', s:fg, s:ui2)
 
-  call s:HL('TabLine', s:gray5, s:ui1)
-  call s:HL('TabLineFill', s:gray15, s:ui1)
-  call s:HL('TabLineSel', s:gray28, s:gray12, s:bold)
+  call s:HL('TabLineFill', s:none, s:none)
+  call s:HL('TabLine', s:ui5, s:bg)
+  call s:HL('TabLineSel', s:gray28, s:ui3, s:bold)
 
   " The column separating vertically split windows
-  call s:HL('VertSplit', s:none, s:none)
+  call s:HL('VertSplit', s:ui2, s:none)
 
   " Current match in wildmenu completion
   call s:HL('WildMenu', s:blue, s:white, s:bold . s:inverse)
 
   " Directory names, special names in listing
-  call s:HL('Directory', s:black, s:none, s:bold)
+  call s:HL('Directory', s:fg, s:none, s:bold)
 
   " Titles for output from :set all, :autocmd, etc.
   " Also used for Markdown headings
-  call s:HL('Title', s:black, s:none, s:bold)
+  call s:HL('Title', s:fg, s:none, s:bold)
 
   " " Error messages on the command line
   call s:HL('ErrorMsg', s:red, s:none, s:bold)
@@ -271,55 +273,55 @@ augroup END
 
 
 " HelpFiles: {{{
-  call s:HL('HelpNormal', s:gray28, s:black)
-  call s:HL('helpConditional', s:gray28, s:black)
-  call s:HL('helpExample', s:gray28, s:black, s:italic)
-  call s:HL('helpHyperTextEntry', s:gray28, s:black, s:bold)
-  call s:HL('helpMacro', s:gray28, s:black, s:bold)
-  call s:HL('helpRepeat', s:gray28, s:black, s:bold)
-  call s:HL('helpRepeat', s:gray28, s:black, s:bold)
-  call s:HL('helpStorageClass', s:gray28, s:black, s:bold)
-  call s:HL('helpURL', s:gray28, s:black, s:italic)
-  call s:HL('helpConstant', s:gray28, s:black, s:bold)
-  call s:HL('helpException', s:lightred, s:black, s:bold)
-  call s:HL('helpHyperTextJump', s:gray28, s:black, s:italic)
-  call s:HL('helpSectionDelim', s:gray28, s:black, s:bold)
-  call s:HL('helpString', s:gray28, s:black, s:italic)
-  call s:HL('helpUnderlined', s:gray28, s:black, s:underline)
-  call s:HL('helpDebug', s:gray28, s:black, s:italic)
-  call s:HL('helpFloat', s:magentahl, s:black, s:italic)
-  call s:HL('helpIdentifier', s:gray28, s:black, s:italic)
-  call s:HL('helpNumber', s:magentahl, s:black, s:italic)
-  call s:HL('helpSpecial', s:gray28, s:black, s:italic)
-  call s:HL('helpStructure', s:gray28, s:black, s:bold)
-  call s:HL('helpVim', s:gray28, s:black, s:italic)
-  call s:HL('helpBoolean', s:magentahl, s:black, s:bold)
-  call s:HL('helpDefine', s:gray28, s:black, s:bold)
-  call s:HL('helpFunction', s:gray28, s:black, s:italic)
-  call s:HL('helpIgnore', s:gray28, s:black, s:italic)
-  call s:HL('helpOperator', s:gray28, s:black)
-  call s:HL('helpSpecialChar', s:gray28, s:black, s:italic)
-  call s:HL('helpTag', s:gray28, s:black, s:italic)
-  call s:HL('helpTag', s:gray28, s:black, s:italic)
+  call s:HL('HelpNormal', s:gray28, s:fg)
+  call s:HL('helpConditional', s:gray28, s:fg)
+  call s:HL('helpExample', s:gray28, s:fg, s:italic)
+  call s:HL('helpHyperTextEntry', s:gray28, s:fg, s:bold)
+  call s:HL('helpMacro', s:gray28, s:fg, s:bold)
+  call s:HL('helpRepeat', s:gray28, s:fg, s:bold)
+  call s:HL('helpRepeat', s:gray28, s:fg, s:bold)
+  call s:HL('helpStorageClass', s:gray28, s:fg, s:bold)
+  call s:HL('helpURL', s:gray28, s:fg, s:italic)
+  call s:HL('helpConstant', s:gray28, s:fg, s:bold)
+  call s:HL('helpException', s:lightred, s:fg, s:bold)
+  call s:HL('helpHyperTextJump', s:gray28, s:fg, s:italic)
+  call s:HL('helpSectionDelim', s:gray28, s:fg, s:bold)
+  call s:HL('helpString', s:gray28, s:fg, s:italic)
+  call s:HL('helpUnderlined', s:gray28, s:fg, s:underline)
+  call s:HL('helpDebug', s:gray28, s:fg, s:italic)
+  call s:HL('helpFloat', s:magentahl, s:fg, s:italic)
+  call s:HL('helpIdentifier', s:gray28, s:fg, s:italic)
+  call s:HL('helpNumber', s:magentahl, s:fg, s:italic)
+  call s:HL('helpSpecial', s:gray28, s:fg, s:italic)
+  call s:HL('helpStructure', s:gray28, s:fg, s:bold)
+  call s:HL('helpVim', s:gray28, s:fg, s:italic)
+  call s:HL('helpBoolean', s:magentahl, s:fg, s:bold)
+  call s:HL('helpDefine', s:gray28, s:fg, s:bold)
+  call s:HL('helpFunction', s:gray28, s:fg, s:italic)
+  call s:HL('helpIgnore', s:gray28, s:fg, s:italic)
+  call s:HL('helpOperator', s:gray28, s:fg)
+  call s:HL('helpSpecialChar', s:gray28, s:fg, s:italic)
+  call s:HL('helpTag', s:gray28, s:fg, s:italic)
+  call s:HL('helpTag', s:gray28, s:fg, s:italic)
   call s:HL('helpCharacter', s:lightred, s:none, s:italic)
-  call s:HL('helpDelimiter', s:gray28, s:black, s:italic)
-  call s:HL('helpInclude', s:gray28, s:black, s:italic)
-  call s:HL('helpSpecialComment', s:gray28, s:black, s:italic)
-  call s:HL('helpHeader', s:gray28, s:black, s:bold)
-  call s:HL('helpKeyword', s:gray28, s:black, s:bold)
-  call s:HL('helpPreCondit', s:gray28, s:black, s:italic)
-  call s:HL('helpType', s:gray28, s:black, s:bold)
-  call s:HL('helpHeadline', s:gray28, s:black, s:bold)
-  call s:HL('helpLabel', s:gray28, s:black, s:bold)
-  call s:HL('helpPreProc', s:gray28, s:black, s:bold)
-  call s:HL('helpStatement', s:gray28, s:black, s:bold)
-  call s:HL('helpTypedef', s:gray28, s:black, s:italic)
-  call s:HL('helpOption', s:gray28, s:black, s:bold)
+  call s:HL('helpDelimiter', s:gray28, s:fg, s:italic)
+  call s:HL('helpInclude', s:gray28, s:fg, s:italic)
+  call s:HL('helpSpecialComment', s:gray28, s:fg, s:italic)
+  call s:HL('helpHeader', s:gray28, s:fg, s:bold)
+  call s:HL('helpKeyword', s:gray28, s:fg, s:bold)
+  call s:HL('helpPreCondit', s:gray28, s:fg, s:italic)
+  call s:HL('helpType', s:gray28, s:fg, s:bold)
+  call s:HL('helpHeadline', s:gray28, s:fg, s:bold)
+  call s:HL('helpLabel', s:gray28, s:fg, s:bold)
+  call s:HL('helpPreProc', s:gray28, s:fg, s:bold)
+  call s:HL('helpStatement', s:gray28, s:fg, s:bold)
+  call s:HL('helpTypedef', s:gray28, s:fg, s:italic)
+  call s:HL('helpOption', s:gray28, s:fg, s:bold)
 " }}}
 
 " Gutter: {{{
   " Line number for :number and :# commands
-  call s:HL('LineNr', s:gray15, s:ui1)
+  call s:HL('LineNr', s:gray15, s:none)
 
   " Column where signs are displayed
   call s:HL('SignColumn', s:blue, s:none)
@@ -344,29 +346,29 @@ augroup END
 " }}}
 
 " Syntax Highlighting: {{{
-  call s:HL('Special', s:black, s:none, s:italic)
-  call s:HL('Comment', s:gray28, s:black, s:italic)
+  call s:HL('Special', s:fg, s:none, s:italic)
+  call s:HL('Comment', s:gray28, s:fg, s:italic)
   " TODO: a todo tag
-  call s:HL('Todo', s:gray28, s:black, s:bold . s:italic)
+  call s:HL('Todo', s:gray28, s:fg, s:bold . s:italic)
   " NOTE: a note tag
   " ERROR: a error tag
   " FIXME: a fixme tag
-  call s:HL('vimCommentTitle', s:gray28, s:black, s:bold . s:italic)
-  call s:HL('vimCommentTitleLeader', s:gray28, s:black, s:bold . s:italic)
+  call s:HL('vimCommentTitle', s:gray28, s:fg, s:bold . s:italic)
+  call s:HL('vimCommentTitleLeader', s:gray28, s:fg, s:bold . s:italic)
 
   call s:HL('Error', s:red, s:none, s:bold . s:inverse)
 
   " Generic statement
-  call s:HL('Statement', s:black, s:none, s:bold)
+  call s:HL('Statement', s:fg, s:none, s:bold)
 
   " if, then, else, endif, swicth, etc.
-  call s:HL('Conditional', s:black, s:none, s:bold)
+  call s:HL('Conditional', s:fg, s:none, s:bold)
 
   " for, do, while, etc.
-  call s:HL('Repeat', s:black, s:none, s:bold)
+  call s:HL('Repeat', s:fg, s:none, s:bold)
 
   " case, default, etc.
-  call s:HL('Label', s:black, s:none, s:bold)
+  call s:HL('Label', s:fg, s:none, s:bold)
 
   " try, catch, throw
   call s:HL('Exception', s:red, s:none, s:bold)
@@ -375,32 +377,32 @@ augroup END
   call s:HL('Operator', s:black, s:none)
 
   " Any other keyword
-  call s:HL('Keyword', s:black, s:none, s:bold)
+  call s:HL('Keyword', s:fg, s:none, s:bold)
 
   " Variable name
-  call s:HL('Identifier', s:black, s:none, s:italic)
+  call s:HL('Identifier', s:fg, s:none, s:italic)
 
   " Function name
-  call s:HL('Function', s:black, s:none, s:italic)
+  call s:HL('Function', s:fg, s:none, s:italic)
 
   " Generic preprocessor
   " Stuff like 'require' in Ruby.
-  call s:HL('PreProc', s:black, s:none, s:bold)
+  call s:HL('PreProc', s:fg, s:none, s:bold)
 
   " Preprocessor #include
-  call s:HL('Include', s:black, s:none, s:italic)
+  call s:HL('Include', s:fg, s:none, s:italic)
 
   " Preprocessor #define
-  call s:HL('Define', s:black, s:none, s:bold)
+  call s:HL('Define', s:fg, s:none, s:bold)
 
   " Same as Define
-  call s:HL('Macro', s:black, s:none, s:bold)
+  call s:HL('Macro', s:fg, s:none, s:bold)
 
   " Preprocessor #if, #else, #endif, etc.
   call s:HL('PreCondit', s:gray1, s:none, s:italic)
 
   " Generic constant
-  call s:HL('Constant', s:black, s:none, s:bold)
+  call s:HL('Constant', s:fg, s:none, s:bold)
 
   " Character constant: 'c', '/n'
   call s:HL('Character', s:red, s:none, s:italic)
@@ -418,27 +420,27 @@ augroup END
   call s:HL('Float', s:magenta, s:none, s:italic)
 
   " Generic type
-  call s:HL('Type', s:black, s:none, s:bold)
+  call s:HL('Type', s:fg, s:none, s:bold)
 
   " static, register, volatile, etc
-  call s:HL('StorageClass', s:black, s:none, s:bold)
+  call s:HL('StorageClass', s:fg, s:none, s:bold)
 
   " struct, union, enum, etc.
-  call s:HL('Structure', s:black, s:none, s:bold)
+  call s:HL('Structure', s:fg, s:none, s:bold)
 
   " typedef
-  call s:HL('Typedef', s:black, s:none, s:italic)
+  call s:HL('Typedef', s:fg, s:none, s:italic)
 " }}}
 
 " Completion Menu: {{{
   " Popup menu: normal item
-  call s:HL('Pmenu', s:black, s:ui5)
+  call s:HL('Pmenu', s:fg, s:ui5)
   " Popup menu: selected item
-  call s:HL('PmenuSel', s:white, s:black, s:bold)
+  call s:HL('PmenuSel', s:white, s:fg, s:bold)
   " Popup menu: scrollbar
   call s:HL('PmenuSbar', s:none, s:ui5)
   " Popup menu: scrollbar thumb
-  call s:HL('PmenuThumb', s:none, s:black)
+  call s:HL('PmenuThumb', s:none, s:fg)
 " }}}
 
 " Diffs: {{{
@@ -457,6 +459,9 @@ augroup END
     call s:HL('SpellLocal', s:none, s:none, s:undercurl, s:green)
     " Rare word
     call s:HL('SpellRare', s:none, s:none, s:undercurl, s:magenta)
+
+    call s:HL('strikeThrough', s:none, s:none, 'undercurl')
+
   end
 " }}}
 
@@ -472,13 +477,13 @@ augroup END
 " }}}
 
 " GITCOMMIT: {{{
-  call s:HL('gitcommitBranch', s:gray28, s:black, s:bold)
-  call s:HL('gitcommitHeader', s:gray28, s:black)
-  call s:HL('gitcommitSelectedType', s:gray28, s:black)
-  call s:HL('gitcommitSelectedFile', s:gray28, s:black)
-  call s:HL('gitcommitDiscardedType', s:gray28, s:black)
-  call s:HL('gitcommitDiscardedFile', s:gray28, s:black)
-  call s:HL('gitcommitUntrackedFile', s:gray28, s:black)
+  call s:HL('gitcommitBranch', s:gray28, s:fg, s:bold)
+  call s:HL('gitcommitHeader', s:gray28, s:fg)
+  call s:HL('gitcommitSelectedType', s:gray28, s:fg)
+  call s:HL('gitcommitSelectedFile', s:gray28, s:fg)
+  call s:HL('gitcommitDiscardedType', s:gray28, s:fg)
+  call s:HL('gitcommitDiscardedFile', s:gray28, s:fg)
+  call s:HL('gitcommitUntrackedFile', s:gray28, s:fg)
 " }}}
 "
 " Sneak: {{{
@@ -507,17 +512,17 @@ augroup END
 " }}}
 
 " Dirvish: {{{
-  call s:HL('DirvishPathTail', s:black, s:none, s:bold)
+  call s:HL('DirvishPathTail', s:fg, s:none, s:bold)
   call s:HL('DirvishArg', s:blue, s:none, s:italic)
 " }}}
 
 " Ruby specific Highlighting: {{{
-  call s:HL('rubyDefine', s:black, s:none, s:bold)
+  call s:HL('rubyDefine', s:fg, s:none, s:bold)
   call s:HL('rubyStringDelimiter', s:gray8, s:none)
 " }}}
 
 " XML/HtML specific Highlighting: {{{
-  call s:HL('xmlAttribPunct', s:black, s:uibg)
+  call s:HL('xmlAttribPunct', s:fg, s:bg)
 " }}}
 
 
