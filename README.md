@@ -14,12 +14,19 @@
 A light black and white vim colorscheme with sparse use of color to denote important syntax elements.
 Looks even more awesome when combined with [Sombre.tmux](https://github.com/alexanderjeurissen/sombre.tmux)
 
-![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/ruby.png)
-![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/python.png)
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/high_contrast_ruby.png)
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/high_contrast_python.png)
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/high_contrast_javascript.png)
 
 ## Screenshots
-### Low contrast mode(ruby)
-![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/low_contrast_mode.png)
+### Low contrast mode
+Lumiere offers a low contrast mode, that reduces the harsh blacks/whites and replaces them with warmer grays and sepia.
+The low contrast mode can be enabled by setting `let g:lumiere_low_contrast_mode = 1`  in your vimrc
+and restarting vim.
+
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/low_contrast_ruby.png)
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/low_contrast_python.png)
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/low_contrast_javascript.png)
 
 ### Git Diff
 ![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/gitdiff.png)
@@ -45,9 +52,6 @@ Add `Plug 'alexanderjeurissen/lumiere.vim'` to your .vimrc and run `:PlugInstall
 
 Then add the line `colorscheme lumiere` to your .vimrc file, and restart vim.
 
-## Color palette
-
-
 ## Customization variables
 There are a couple of options that can be configured:
 
@@ -57,4 +61,4 @@ There are a couple of options that can be configured:
 | g:lumiere_italic | 1 | when set to 0, disables the usage of italic font |
 | g:lumiere_inverse | 1 | when set to 0, disables the usage of inversing fg / bg of color groups |
 | g:lumiere_invert_selection | 1 | when set to 0, disables the usage of inverting the color in visual cursor and HlSearch|
-| g:lumiere_low_contrast_mode | 0 | When set to 1, reduces the background color brightness for easier use in low light conditions |
+| g:lumiere_low_contrast_mode | 0 | When set to 1, reduces the background color brightness and foreground color contrast for easier use in low light conditions |

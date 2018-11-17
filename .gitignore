@@ -1,0 +1,56 @@
+# javascript
+node_modules
+bower_components
+coverage
+dist
+.tmp
+npm-debug.log
+app/bower_components
+.tern-project
+.yarn-cache
+
+# ruby
+*.ruby-version
+.sass-cache
+.bundle
+
+#temp json output of yaml translations
+app/languages/*.json
+
+# Webstorm files
+.idea/*
+
+# vim swap files
+*.swp
+*.swo
+swoopBuf
+.tern-port
+
+# apple temp files and code unrelated directories
+.DS_Store
+/Library
+~/Library
+
+# vim sessions and log files
+*.session
+logfile.log
+
+# Intheam config files
+*.pem
+.intheam/*
+
+# Visual studio code
+.vscode/*
+
+# Gitlab cli config
+~/.config/gitlab-cli/default.js
+
+# CACHE directories
+Caches
+.CACHES
+.cache
+
+# MISC
+.byebug_history
+public_
+bin/pretty
