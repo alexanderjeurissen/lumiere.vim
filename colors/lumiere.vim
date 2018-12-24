@@ -176,6 +176,7 @@ augroup END
     let s:ui5 = '#b7b2a5'         " #b7b2a5
     let s:ui6 = '#a39e8d'         " #a39e8d
     let s:ui7 = '#908975'         " #908975
+    let s:ui0  = '#000000'        " #000000
   " }}}
 
   " NOTE: colors moddeled after the Win98 selected start menu item
@@ -236,17 +237,17 @@ augroup END
 
   call s:HL('Underlined', s:fg, s:none, s:underline)
 
-  call s:HL('StatusLine', s:fg, s:ui1, s:bold)
+  call s:HL('StatusLine', s:ui0, s:none, s:underline)
   " NOTE: equal StatusLine and StatusLineNC cause statusline spacing to bug out
   " SOURCE: https://tinyurl.com/yavjy26z
-  call s:HL('StatusLineNC', s:fg, s:ui2)
+  call s:HL('StatusLineNC', s:ui7, s:none, s:underline . s:italic)
 
   call s:HL('TabLineFill', s:none, s:none)
   call s:HL('TabLine', s:ui5, s:bg)
   call s:HL('TabLineSel', s:gray28, s:ui3, s:bold)
 
   " The column separating vertically split windows
-  call s:HL('VertSplit', s:ui2, s:none)
+  call s:HL('VertSplit', s:ui5, s:none, s:italic )
 
   " Current match in wildmenu completion
   call s:HL('WildMenu', s:blue, s:white, s:bold . s:inverse)
