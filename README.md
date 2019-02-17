@@ -14,11 +14,16 @@
 A light black and white Vim 8 / Neovim colorscheme with sparse use of color to denote important syntax elements.
 Looks even more awesome when combined with [Sombre.tmux](https://github.com/alexanderjeurissen/sombre.tmux)
 
-![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/high_contrast_ruby.png)
-![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/high_contrast_python.png)
-![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/high_contrast_javascript.png)
 
-## Features
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/lumiere_dim_inactive.png)
+
+## Screenshots
+
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/lumiere_rb.png)
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/lumiere_py.png)
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/lumiere_js.png)
+
+## Notable Features
 ### Dim inactive windows (neovim only)
 Lumiere offers a configuration option, to reduce the opacity of inactive windows. This helps more clearly
 distinguish the pane that is currently being focussed. This currently depends on the `hl-NormalNC` highlight group which
