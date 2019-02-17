@@ -19,9 +19,17 @@ Looks even more awesome when combined with [Sombre.tmux](https://github.com/alex
 
 ## Screenshots
 
+### Ruby
 ![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/lumiere_rb.png)
+
+### Python
 ![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/lumiere_py.png)
+
+### Javascript
 ![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/lumiere_js.png)
+
+### Vimscript
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/lumiere_vim.png)
 
 ## Notable Features
 ### Dim inactive windows (neovim only)
