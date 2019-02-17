@@ -19,9 +19,11 @@ Looks even more awesome when combined with [Sombre.tmux](https://github.com/alex
 ![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/high_contrast_javascript.png)
 
 ## Features
-### Dim inactive windows
+### Dim inactive windows (neovim only)
 Lumiere offers a configuration option, to reduce the opacity of inactive windows. This helps more clearly
-distinguish the pane that is currently being focussed.
+distinguish the pane that is currently being focussed. This currently depends on the `hl-NormalNC` highlight group which
+is only available in NeoVim. There is an open issue to add Vim8 support.
+
 This setting is opt in and can be enabled by setting `let g:lumiere_dim_inactive_windows = 1`  in your vimrc
 and restarting Vim.
 

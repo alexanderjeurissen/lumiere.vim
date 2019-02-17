@@ -332,7 +332,7 @@ augroup END
 
   " Column where folds are displayed
   if g:lumiere_hide_fold_column == 1
-    hi clear FoldColumn
+    call s:HL('FoldColumn', s:none, s:none, s:none)
   else
     call s:HL('FoldColumn', s:gray14, s:none)
   endif
