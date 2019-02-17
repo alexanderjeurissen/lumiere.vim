@@ -83,8 +83,11 @@ augroup END
   if !exists('g:lumiere_inverse')
     let g:lumiere_inverse=1
   endif
-  if !exists('g:lumiere_low_contrast_mode')
-    let g:lumiere_low_contrast_mode=0
+  if !exists('g:lumiere_hide_fold_column')
+    let g:lumiere_hide_fold_column=0
+  endif
+  if !exists('g:lumiere_dim_inactive_windows')
+    let g:lumiere_dim_inactive_windows=0
   endif
 
   let s:bold = 'bold,'
@@ -156,17 +159,10 @@ augroup END
     let s:white = '#ffffff'       " #ffffff
   " }}}
 
-  " NOTE: The background we choose depends on
-  " the light conditions. less harsh when low light
-  " more bright when we have plenty of light.
-
-  if g:lumiere_low_contrast_mode == 1
-    let s:bg = '#F1F1F1'        " #F1F1F1
-    let s:fg = '#424242'        " #424242
-  else
-    let s:bg = '#ecf0f1'        " #ECF0F1
-    let s:fg = '#000000'        " #000000
-  end
+  " NOTE: The bread and butter
+  let s:bg = '#F1F1F1'        " #F1F1F1
+  let s:bgNC = '#e4e4e4'      " #e4e4e4
+  let s:fg = '#424242'        " #424242
 
   " NOTE: offsuite grays for UI elements {{{
     let s:ui1 = '#dfddd7'         " #dfddd7
@@ -208,6 +204,9 @@ augroup END
 " Normal UI {{{
   " Normal text
   call s:HL('Normal', s:fg, s:bg)
+  if g:lumiere_dim_inactive_windows == 1
+    call s:HL('NormalNC', s:fg, s:bgNC)
+  endif
 
   " Cursor line / column
   call s:HL('CursorLine', s:fg, s:ui1)
@@ -247,7 +246,7 @@ augroup END
   call s:HL('TabLineSel', s:gray28, s:ui3, s:bold)
 
   " The column separating vertically split windows
-  call s:HL('VertSplit', s:ui5, s:none, s:italic )
+  call s:HL('VertSplit', s:ui5, s:none, s:italic)
 
   " Current match in wildmenu completion
   call s:HL('WildMenu', s:blue, s:white, s:bold . s:inverse)
@@ -330,8 +329,13 @@ augroup END
 
   " Line used for closed folds
   call s:HL('Folded', s:gray5, s:ui2, s:italic)
+
   " Column where folds are displayed
-  call s:HL('FoldColumn', s:white, s:ui3)
+  if g:lumiere_hide_fold_column == 1
+    hi clear FoldColumn
+  else
+    call s:HL('FoldColumn', s:gray14, s:none)
+  endif
 " }}}
 
 " Cursor: {{{
@@ -525,7 +529,6 @@ augroup END
 " XML/HtML specific Highlighting: {{{
   call s:HL('xmlAttribPunct', s:fg, s:bg)
 " }}}
-
 
 " Comment Keywords: {{{
 augroup lumiere_todo
