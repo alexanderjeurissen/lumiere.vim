@@ -291,7 +291,7 @@ augroup END
   call s:HL('helpString', s:gray28, s:fg, s:italic)
   call s:HL('helpUnderlined', s:gray28, s:fg, s:underline)
   call s:HL('helpDebug', s:gray28, s:fg, s:italic)
-  call s:HL('helpFloat', s:magentahl, s:fg, s:italic)
+  call s:HL('helpFloat', s:fg, s:fg, s:italic)
   call s:HL('helpIdentifier', s:gray28, s:fg, s:italic)
   call s:HL('helpNumber', s:magentahl, s:fg, s:italic)
   call s:HL('helpSpecial', s:gray28, s:fg, s:italic)
@@ -354,14 +354,14 @@ augroup END
 
 " Syntax Highlighting: {{{
   call s:HL('Special', s:fg, s:none, s:italic)
-  call s:HL('Comment', s:gray28, s:fg, s:italic)
+  call s:HL('Comment', s:fg, s:bg, s:italic . s:inverse)
   " TODO: a todo tag
-  call s:HL('Todo', s:gray28, s:fg, s:bold . s:italic)
+  call s:HL('Todo', s:fg, s:bg, s:bold . s:italic . s:inverse)
   " NOTE: a note tag
   " ERROR: a error tag
   " FIXME: a fixme tag
-  call s:HL('vimCommentTitle', s:gray28, s:fg, s:bold . s:italic)
-  call s:HL('vimCommentTitleLeader', s:gray28, s:fg, s:bold . s:italic)
+  call s:HL('vimCommentTitle', s:fg, s:bg, s:bold . s:italic . s:inverse)
+  call s:HL('vimCommentTitleLeader', s:fg, s:bg, s:bold . s:italic . s:inverse)
 
   call s:HL('Error', s:fg, s:none, s:bold . s:inverse)
 
@@ -381,7 +381,7 @@ augroup END
   call s:HL('Exception', s:fg, s:none, s:bold)
 
   " sizeof, "+", "*", etc.
-  call s:HL('Operator', s:black, s:none)
+  call s:HL('Operator', s:fg, s:none)
 
   " Any other keyword
   call s:HL('Keyword', s:fg, s:none, s:bold)
@@ -415,16 +415,16 @@ augroup END
   call s:HL('Character', s:fg, s:none, s:italic)
 
   " String constant: "this is a string"
-  call s:HL('String', s:gray8, s:none, s:italic)
+  call s:HL('String', s:fg, s:none, s:italic)
 
   " Boolean constant: TRUE, FALSE
-  call s:HL('Boolean', s:magenta, s:none, s:bold)
+  call s:HL('Boolean', s:fg, s:none, s:bold)
 
   " Number constant: 234, 0xff
-  call s:HL('Number', s:magenta, s:none, s:italic)
+  call s:HL('Number', s:fg, s:none, s:italic)
 
   " Floating point constant: 2.3e10
-  call s:HL('Float', s:magenta, s:none, s:italic)
+  call s:HL('Float', s:fg, s:none, s:italic)
 
   " Generic type
   call s:HL('Type', s:fg, s:none, s:bold)
@@ -525,7 +525,7 @@ augroup END
 
 " Ruby specific Highlighting: {{{
   call s:HL('rubyDefine', s:fg, s:none, s:bold)
-  call s:HL('rubyStringDelimiter', s:gray8, s:none)
+  call s:HL('rubyStringDelimiter', s:fg, s:none)
 " }}}
 
 " XML/HtML specific Highlighting: {{{
