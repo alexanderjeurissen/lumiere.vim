@@ -164,6 +164,8 @@ augroup END
   let s:bgNC = '#e4e4e4'      " #e4e4e4
   let s:fg = '#424242'        " #424242
 
+  let s:bgError = '#faf1f1'         " #faf1f1
+
   " NOTE: offsuite grays for UI elements {{{
     let s:ui1 = '#dfddd7'         " #dfddd7
     let s:ui2 = '#dedcd6'         " #dedcd6
@@ -203,7 +205,7 @@ augroup END
 
 " Normal UI {{{
   " Normal text
-  call s:HL('Normal', s:fg, s:bg)
+  call s:HL('Normal', s:fg, s:none)
   if g:lumiere_dim_inactive_windows == 1
     call s:HL('NormalNC', s:fg, s:bgNC)
   endif
@@ -242,7 +244,7 @@ augroup END
   call s:HL('StatusLineNC', s:ui7, s:none, s:underline . s:italic)
 
   call s:HL('TabLineFill', s:none, s:none)
-  call s:HL('TabLine', s:ui5, s:bg)
+  call s:HL('TabLine', s:ui5, s:none)
   call s:HL('TabLineSel', s:gray28, s:ui3, s:bold)
 
   " The column separating vertically split windows
@@ -259,7 +261,7 @@ augroup END
   call s:HL('Title', s:fg, s:none, s:bold)
 
   " " Error messages on the command line
-  call s:HL('ErrorMsg', s:red, s:none, s:bold)
+  call s:HL('ErrorMsg', s:fg, s:none, s:bold)
   " " More prompt: -- More --
   call s:HL('MoreMsg', s:blue, s:none, s:bold)
   " " Current mode message: -- INSERT --
@@ -361,7 +363,7 @@ augroup END
   call s:HL('vimCommentTitle', s:gray28, s:fg, s:bold . s:italic)
   call s:HL('vimCommentTitleLeader', s:gray28, s:fg, s:bold . s:italic)
 
-  call s:HL('Error', s:red, s:none, s:bold . s:inverse)
+  call s:HL('Error', s:fg, s:none, s:bold . s:inverse)
 
   " Generic statement
   call s:HL('Statement', s:fg, s:none, s:bold)
@@ -376,7 +378,7 @@ augroup END
   call s:HL('Label', s:fg, s:none, s:bold)
 
   " try, catch, throw
-  call s:HL('Exception', s:red, s:none, s:bold)
+  call s:HL('Exception', s:fg, s:none, s:bold)
 
   " sizeof, "+", "*", etc.
   call s:HL('Operator', s:black, s:none)
@@ -410,7 +412,7 @@ augroup END
   call s:HL('Constant', s:fg, s:none, s:bold)
 
   " Character constant: 'c', '/n'
-  call s:HL('Character', s:red, s:none, s:italic)
+  call s:HL('Character', s:fg, s:none, s:italic)
 
   " String constant: "this is a string"
   call s:HL('String', s:gray8, s:none, s:italic)
@@ -505,13 +507,13 @@ augroup END
 " }}}
 
 " Asynchronous Lint Engine: {{{
-  call s:HL('ALEErrorBg', s:red, s:redhl)
+  call s:HL('ALEErrorBg', s:none, s:bgError)
   call s:HL('ALEErrorHl', s:none, s:lightred, s:none)
   call s:HL('ALEErrorSign', s:red, s:redhl)
-  call s:HL('ALEErrorLine', s:white, s:red)
+  call s:HL('ALEErrorLine', s:red, s:none)
 
   call s:HL('ALEWarningSign', s:orange, s:orangehl)
-  call s:HL('ALEWarningLine', s:orange, s:orangehl)
+  call s:HL('ALEWarningLine', s:orange, s:none)
   call s:HL('ALEInfoSign', s:blue, s:bluehl, s:bold)
   call s:HL('ALEInfoLine', s:blue, s:bluehl)
 " }}}
@@ -527,7 +529,7 @@ augroup END
 " }}}
 
 " XML/HtML specific Highlighting: {{{
-  call s:HL('xmlAttribPunct', s:fg, s:bg)
+  call s:HL('xmlAttribPunct', s:fg, s:none)
 " }}}
 
 " Comment Keywords: {{{
