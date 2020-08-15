@@ -1,4 +1,4 @@
-![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/lumiere_logo.png)
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/main/assets/lumiere_logo.png)
 
 >Do not go gentle into that good night,
 >Old age should burn and rave at close of day;
@@ -15,21 +15,21 @@ A light black and white Vim 8 / Neovim colorscheme with sparse use of color to d
 Looks even more awesome when combined with [Sombre.tmux](https://github.com/alexanderjeurissen/sombre.tmux)
 
 
-![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/lumiere_dim_inactive.png)
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/main/assets/lumiere_dim_inactive.png)
 
 ## Screenshots
 
 ### Ruby
-![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/lumiere_rb.png)
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/main/assets/lumiere_rb.png)
 
 ### Python
-![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/lumiere_py.png)
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/main/assets/lumiere_py.png)
 
 ### Javascript
-![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/lumiere_js.png)
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/main/assets/lumiere_js.png)
 
 ### Vimscript
-![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/lumiere_vim.png)
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/main/assets/lumiere_vim.png)
 
 ## Notable Features
 ### Dim inactive windows (neovim only)
@@ -41,10 +41,10 @@ This setting is opt in and can be enabled by setting `let g:lumiere_dim_inactive
 and restarting Vim.
 
 ### Git Diff
-![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/gitdiff.png)
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/main/assets/gitdiff.png)
 
 ### Vim diff (using Neovim as git difftool)
-![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/master/assets/vimdiff.png)
+![image](https://raw.githubusercontent.com/alexanderjeurissen/lumiere.vim/main/assets/vimdiff.png)
 
 ## Installation
 Lumiere can be installed using the native Vim packages feature, as well as your plugin manager of choice:
